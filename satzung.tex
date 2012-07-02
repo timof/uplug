@@ -17,11 +17,12 @@
 \rightskip0pt plus1em
 \hyphenpenalty2000
 
-\def\items#1{
+\def\items#1{{
+  \itcounter0
   \begin{itemize}
   #1
   \end{itemize}
-}
+}}
 
 \newcount\itcounter
 \newcount\paragrafcounter
@@ -70,12 +71,12 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
    \item
       Der Satzungszweck wird insbesondere verwirklicht durch
       \items{
-        \it[(a)]
+        \item
           {\"o}ffentliche und eintrittsfreie
           % Schluesselwoerter fuer Gemeinnuetzigkeit!
           Veranstaltungen, Vortr{\"a}ge und Workshops zu Linux und anderer
           freier Software;
-        \it[(b)]
+        \item
           unentgeltliche Unterst{\"u}tzung und Beratung von Studierenden und anderen Personen
           in Fragen der Inbetriebnahme und Benutzung von Linux und anderer freier Software.
           % "Hilfe fuer Studierende" ist auch so ein Schluesselbegriff fuer Gemeinnuetzigkeit
@@ -83,13 +84,13 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
    \item
      Der Verein ist selbstlos t{\"a}tig und verfolgt keine eigenwirtschaftlichen Zwecke.
      \items{
-       \it[(a)]
+       \item
          Mittel des Vereins d{\"u}rfen nur f{\"u}r satzungsgem{\"a}{\ss}e Zwecke verwendet werden.
-       \it[(b)]
+       \item
          Die Mitglieder des Vereins erhalten in ihrer Eigenschaft als Mitglied
          keine Zuwendungen aus Mitteln des Vereins. Die T{\"a}tigkeit des Vorstands f{\"u}r den
          Verein wird nicht verg{\"u}tet.
-       \it[(c)]
+       \item
          Nachgewiesene Auslagen im Rahmen ehrenamtlicher T{\"a}tigkeit f{\"u}r den Verein
          k{\"o}nnen erstattet werden.
      }
@@ -163,19 +164,19 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
    \item Oberstes Vereinsorgan ist die Mitgliederversammlung.
    \item Die Mitgliederversammlung ist insbesondere zust{\"a}ndig f{\"u}r
      \items{
-       \it[(a)] die Entlastung des Vorstands nach Entgegennahme des Jahresberichts und der
+       \item die Entlastung des Vorstands nach Entgegennahme des Jahresberichts und der
                 Stellungnahme der Rechnungspr{\"u}fer;
-       \it[(b)] die Genehmigung des Haushaltsplanes;
-       \it[(c)] die Wahl des Vorstands;
-       \it[(d)] die Wahl von zwei Rechnungspr{\"u}fern;
-       \it[(e)] Beschlussfassung {\"u}ber Satzungs{\"a}nderungen, Ausschluss von
+       \item die Genehmigung des Haushaltsplanes;
+       \item die Wahl des Vorstands;
+       \item die Wahl von zwei Rechnungspr{\"u}fern;
+       \item Beschlussfassung {\"u}ber Satzungs{\"a}nderungen, Ausschluss von
                 Mitgliedern und die Aufl{\"o}sung des Vereins.
      }
    \item Die ordentliche Mitgliederversammlung findet einmal j{\"a}hrlich statt.
    \item Eine au{\ss}erordentliche Mitgliederversammlung wird anberaumt
      \items{
-       \it[(a)] auf Beschluss des Vorstands oder der Mitgliederversammlung;
-       \it[(b)] auf Verlangen der Rechnungspr{\"u}fer oder auf schriftlichen Antrag eines
+       \item auf Beschluss des Vorstands oder der Mitgliederversammlung;
+       \item auf Verlangen der Rechnungspr{\"u}fer oder auf schriftlichen Antrag eines
                 Zehntels der Mitglieder; in diesem Fall ist die Versammlung innerhalb von
                 vier Wochen nach Antragseingang durchzuf{\"u}hren.
      }
@@ -192,9 +193,9 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
        Zur Beschlussfassung {\"u}ber eine {\"A}nderung der Satzung muss die vorgeschlagene
        Neufassung der Einladung im Wortlaut beif{\"u}gt werden.
     \item Antr{\"a}ge zur Tagesordnung
-      \it[(a)] schriftliche Antr{\"a}ge eines Zehntels der Mitglieder werden in die Tagesordnung
+      \item schriftliche Antr{\"a}ge eines Zehntels der Mitglieder werden in die Tagesordnung
                aufgenommen, sofern dies unter Einhaltung der Ladefrist m{\"o}glich ist;
-      \it[(b)] ohne R\"ucksicht auf die Ladefrist wird die 
+      \item ohne R\"ucksicht auf die Ladefrist wird die 
        Auf Verlangen des Vorstandes, auf Antrag eine Zehntels der Mitglieder  oder eines Drittels
        der erschienenen Mitglieder wird die Tagesordnung erg{\"a}nzt um Gegenst\"ande, {\"u}ber die kein Beschluss gefasst werden
        soll oder die lediglich die Einberufung einer ausserordentlichen Mitgliederversammlung
@@ -207,9 +208,9 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
    \item 
      Beschlussf{\"a}higkeit
        items{
-         \it[(a)] Jede ordnungsgem{\"a}ss einberufene Mitgliederversammlung ist ohne R{\"u}cksicht auf
+         \item Jede ordnungsgem{\"a}ss einberufene Mitgliederversammlung ist ohne R{\"u}cksicht auf
          die Anzahl der erschienenen Mitglieder beschlussf{\"a}hig.
-         \it[(b)] Davon abweichend erfordern Beschl{\"u}sse {\"u}ber Satzungs{\"a}nderungen oder
+         \item Davon abweichend erfordern Beschl{\"u}sse {\"u}ber Satzungs{\"a}nderungen oder
          die Aufl{\"o}sung des Vereins die
          Anwesendheit der H{\"a}lfte aller Mitglieder. Liegt insoweit Beschlussunf{\"a}higkeit
          vor, kann die Mitgliederversammlung die Einberufung eine ausserordentlichen
@@ -219,10 +220,10 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
    \item
      Die Mitgliederversammlung beschlie{\ss}t
      \items{
-       \it[(a)] {\"u}ber die Auf{\"o}sung des Vereins mit  einer Mehrheit von 3/4 der anwesenden Mitglieder;
-       \it[(b)] {\"u}ber Satzungs{\"a}nderungen und Ausschluss von Mitgliedern mit einer Mehrheit von
+       \item {\"u}ber die Auf{\"o}sung des Vereins mit  einer Mehrheit von 3/4 der anwesenden Mitglieder;
+       \item {\"u}ber Satzungs{\"a}nderungen und Ausschluss von Mitgliedern mit einer Mehrheit von
                 2/3 der anwesenden Mitglieder;
-       \it[(c)] in allen anderen F{\"a}llen mit einfacher Mehrheit.
+       \item in allen anderen F{\"a}llen mit einfacher Mehrheit.
      }
    \item Den Vorsitz in der Mitgliederversammlung f{\"u}hrt der Vereinsvorsitzende, in
        dessen Verhinderung sein Stellvertreter. Wenn auch dieser verhindert ist,
