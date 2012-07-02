@@ -14,18 +14,18 @@
 \textwidth180mm
 \textheight260mm
 
-\rightskip0pt plus1em
-\hyphenpenalty2000
+\rightskip0pt plus1ex minus1em
+\hyphenpenalty6000
+\spaceskip0.33em plus0.2em minus0.03em
 
-\def\items#1{{
-  \itcounter0
+\def\items#1{{%
+  \itcounter0%
   \begin{itemize}
   #1
   \end{itemize}
 }}
 
 \newcount\itcounter
-\newcount\paragrafcounter
 \itcounter0
 \let\it\item%
 \def\item{
@@ -33,10 +33,11 @@
   \it[(\the\itcounter)]
 }
  
-\def\paragraf#1#2{
+\def\paragraf#1{
+  \advance\itcounter1%
   \par\bigskip
-  {\large\bfseries \S\,#1\quad#2}
-  \par\medskip
+  {\large\bfseries \S\,\the\itcounter\quad#1}
+  \par\smallskip
 }
 
 \begin{document}
@@ -47,9 +48,10 @@
 \par
 \bigskip
 
-\paragraf1{Name, Sitz und Gesch{\"a}ftsjahr}
+\paragraf{Name, Sitz und Gesch{\"a}ftsjahr}
+\medskip
 
-Der Verein f{\"u}hrt den Namen \glqq Universit{\"a}t Potsdam - LinuxUserGroup\grqq (upLUG)
+Der Verein f{\"u}hrt den Namen \glqq Universit{\"a}t Potsdam - LinuxUserGroup\grqq{} (upLUG).
 Der Verein hat seinen Sitz in Potsdam. Das Gesch{\"a}ftsjahr ist das Kalenderjahr.
 Eintragung beim Amtsgericht Potsdam wird angestrebt.
 %
@@ -57,7 +59,7 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
 %
 % Adresse muss hier nicht stehen, also: besser weglassen!
 
-\paragraf2{Zweck des Vereins}
+\paragraf{Zweck des Vereins}
 
 \items{
   \item
@@ -65,9 +67,9 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
     im Sinne des Abschnitts \glqq Steuerbeg{\"u}nstigte Zwecke\grqq{} der Abgabenordnung.
   \item
      Zweck des Vereins ist die F{\"o}rderung von Bildung, Verst{\"a}ndnis und
-     Akzeptanz sowie die Unterst{\"u}tzung von Anwendern im Bereich der Datenverarbeitung
+     Akzeptanz sowie die Unter\-st{\"u}tzung von Anwendern im Bereich der Datenverarbeitung
      unter spezieller
-     Ber{\"u}cksichtigung des frei verf{\"u}gbaren Betriebssystems Linux.
+     Ber{\"u}cksichtigung des frei ver\-f{\"u}g\-baren Betriebssystems Linux.
    \item
       Der Satzungszweck wird insbesondere verwirklicht durch
       \items{
@@ -96,69 +98,84 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
      }
 }
 
-\paragraf3{Mitgliedschaft}
+\paragraf{Mitgliedschaft}
 
 \items{
    \item Der Verein hat Mitglieder und F{\"o}rdermitglieder. Mitglied oder
-   F{\"o}rdermitglied kann jede nat\"urliche Person werden.
+   F{\"o}rdermitglied kann jede nat\"urliche oder juristische Person werden.
    \item {\"U}ber die Aufnahme entscheidet nach schriftlichem Antrag der Vorstand.
-       Erfolgt eine Ablehnung, kann innerhalb eines Monats Berufung zur n{\"a}chsten
+       Erfolgt eine Ablehnung, kann Berufung zur n{\"a}chsten
        ordentlichen Mitgliederversammlung eingelegt werden.
    \item Der Austritt eines Mitgliedes erfolgt durch schriftliche Erkl{\"a}rung gegen{\"u}ber
        dem Vorstand. Er wird einen Monat, nachdem er erkl{\"a}rt wird, wirksam.
    \item Ein Mitglied kann aus wichtigem Grund ausgeschlossen werden. Ein
        wichtiger Grund liegt vor, wenn sein Verhalten in grober Weise gegen die
-       Interessen des Vereins verst{\"o}{\ss}t.
-       Über den Ausschluss entscheidet die Mitgliederversammlung mit
-       Zweidrittelmehrheit. Die Einladung zu dieser Mitgliederversammlung muss unter
-       Wahrung der satzungsgem{\"a}{\ss}en Frist erfolgen und den Ausschluss des
+       Interessen des Vereins oder die Pflichten als Mitglied verst{\"o}{\ss}t.
+       {\"U}ber den Ausschluss entscheidet die Mitgliederversammlung;
+       die Einladung zu dieser Mitgliederversammlung muss den Ausschluss des
        Mitgliedes als Tagesordnungspunkt enthalten.
-       {\"U}ber den Ausschluss kann durch die Mitgliederversammlung auch in
-       Abwesenheit des betroffenen Mitgliedes wirksam abgestimmt werden, wenn
+       {\"U}ber den Ausschluss kann die Mitgliederversammlung auch in
+       Abwesenheit des betroffenen Mitgliedes beschlie{\ss}en, wenn
        dem auszuschlie{\ss}enden Mitglied mit der Ladung zur Mitgliederversammlung
        schriftlich mitgeteilt wurde, dass und aus welchen Gr{\"u}nden {\"u}ber seinen
-       Ausschluss in der Mitgliederversammlung abgestimmt werden soll und dass
-       die Abstimmung auch in seiner Abwesenheit erfolgen kann.
+       Aus\-schluss abgestimmt werden soll und dass die Abstimmung auch in seiner
+       Abwesenheit erfolgen kann.
 }
 
-\paragraf4{Rechte und Pflichten der Mitglieder}
+\paragraf{Rechte und Pflichten der Mitglieder}
 
 \items{
    \item Die Mitglieder sind berechtigt, an allen Veranstaltungen des Vereins
        teilzunehmen und die Einrichtungen des Vereins zu beanspruchen. Das
        Stimmrecht in der Mitgliederversammlung sowie das aktive und passive
-       Wahlrecht steht allen Mitgliedern zu.
+       Wahlrecht steht allen Mitgliedern, nicht jedoch F{\"o}rdermitgliedern, zu.
        In der Mitgliederversammlung kann das Stimmrecht nur pers{\"o}nlich ausge{\"u}bt werden.
    \item Die Mitglieder sind verpflichtet, die Interessen des Vereins nach Kr{\"a}ften zu
        f{\"o}rdern und alles zu unterlassen, wodurch das Ansehen und der Zweck des
        Vereins Abbruch erleiden k{\"o}nnte. Sie haben die Vereinssatzung und die
        Beschl{\"u}sse der Vereinsorgane zu beachten.
+   \item Die Mitgliederversammlung kann eine Beitragsordnung erlassen, die H{\"o}he und
+       Turnus von Mitgliedsbeitr{\"a}gen regelt.
+   \item Die Mitgliederversammlung kann eine Regelung beschlie{\ss}en, die Mitglieder
+       zur Leistung ehrenamtlicher T{\"a}tigkeit f{\"u}r den Verein verpflichtet.
 }
 
-\paragraf5{Vereinsorgane}
+\paragraf{Vereinsorgane}
+\medskip
 
 Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
 
-\paragraf6{Vorstand}
+\paragraf{Vorstand}
 
 \items{
    \item
-     Der Vorstand besteht aus mindestens zwei Personen, darunter ein Vorsitzender und ein
-     Stellvertretender Vorsitzender. Die Mitgliederversammlung
-     kann eine h{\"o}here Anzahl von Vorstandsmitgliedern beschliessen.
+     Der Vorstand besteht aus mindestens zwei Personen.
+     Die Mitgliederversammlung kann eine h{\"o}here Anzahl von Vorstandsmitgliedern beschliessen.
    \item
      Der Vorstand wird f\"ur die Dauer bis zur n\"achsten ordentlichen Mitgliederversammlung
      gew{\"a}hlt. Wiederwahl ist zul{\"a}ssig
    \item
      Der Verein wird nach \S\,26 BGB gerichtlich und au{\ss}ergerichtlich durch je zwei
      Vorstandsmitglieder gemeinschaftlich vertreten.
-   \item Scheidet ein Vorstandsmitglied w{\"a}hrend der Wahlperiode aus, werden alle
-       Mitglieder unter Einhaltung der satzungsgem{\"a}{\ss}en Frist schriftlich zu einer
-       au{\ss}erordentlichen Mitgliederversammlung geladen, auf der ein neues
-       Vorstandsmitglied gew{\"a}hlt wird.
+   \item
+     Der Vorstand ist f{\"u}r alle Angelegenheiten des Vereins zust{\"a}ndig, soweit sie nicht
+     durch die Satzung der Mitgliederversammlung zugewiesen sind, insbesondere
+     \items{
+       \item Vorbereitung und Einberufung der Mitgliederversammlung;
+       \item F{\"u}hrung der laufenden Vereinsgesch{\"a}fte und der Mitgliederliste;
+       \item Vertretung des Vereins;
+       \item Ausf{\"u}hrung von Beschl{\"u}ssen der Mitgliederversammlung.
+     }
+   \item
+     Der Vorstand ist berechtigt, rein redaktionelle Satzungs{\"a}nderungen auf Verlangen
+     des Amtsgerichts oder des Finanzamtes oder die im Zusammenhang mit einer Vereinsregistereintragung
+     notwendig werden, auch ohne Beschluss der Mitgliederversammlung durchzuf{\"u}hren.
+   \item
+     Die Haftung der Vorstandsmitglieder gegen{\"u}ber dem Verein wird auf Vorsatz und grobe
+     Fahrl{\"a}ssigkeit beschr{\"a}nkt.
 }
 
-\paragraf7{Mitgliederversammlung}
+\paragraf{Mitgliederversammlung}
 
 \items{
    \item Oberstes Vereinsorgan ist die Mitgliederversammlung.
@@ -167,56 +184,51 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
        \item die Entlastung des Vorstands nach Entgegennahme des Jahresberichts und der
                 Stellungnahme der Rechnungspr{\"u}fer;
        \item die Genehmigung des Haushaltsplanes;
-       \item die Wahl des Vorstands;
-       \item die Wahl von zwei Rechnungspr{\"u}fern;
+       \item die Wahl des Vorstands und von zwei Rechnungspr{\"u}fern;
        \item Beschlussfassung {\"u}ber Satzungs{\"a}nderungen, Ausschluss von
-                Mitgliedern und die Aufl{\"o}sung des Vereins.
+                Mitgliedern und die Aufl{\"o}sung des Vereins;
+       \item Beschluss einer Beitragsordnung.
      }
    \item Die ordentliche Mitgliederversammlung findet einmal j{\"a}hrlich statt.
    \item Eine au{\ss}erordentliche Mitgliederversammlung wird anberaumt
      \items{
        \item auf Beschluss des Vorstands oder der Mitgliederversammlung;
-       \item auf Verlangen der Rechnungspr{\"u}fer oder auf schriftlichen Antrag eines
+       \item auf Antrag eines Rechnungspr{\"u}fers oder eines
                 Zehntels der Mitglieder; in diesem Fall ist die Versammlung innerhalb von
                 vier Wochen nach Antragseingang durchzuf{\"u}hren.
      }
    \item Zu jeder Mitgliederversammlung sind alle Mitglieder mindestens zwei Wochen vor
        dem Termin schriftlich oder per E-Mail einzuladen.
        Die Einladung erfolgt durch ein Mitglied des Vorstands.
-       In dringenden F{\"a}llen kann die Ladefrist unter Angabe des Dringlichkeitsgrundes
-       auf eine Woche verk{\"u}rzt werden.
+       % In dringenden F{\"a}llen kann die Ladefrist unter Angabe des Dringlichkeitsgrundes
+       % auf eine Woche verk{\"u}rzt werden.
    \item
-       Die Einladung der Mitgliederversammlung erfolgt unter Angabe der Tagesordnung.
+       Die Einladung zur Mitgliederversammlung erfolgt unter Angabe der Tagesordnung.
        Beschlussfassung ist nur m{\"o}glich {\"u}ber Gegenst{\"a}nde, die in der Tagesordnung
        genannt sind. Davon abweichend ist ein Beschluss zur Einberufung einer
        au{\ss}erordentlichen Mitgliederversammlung jederzeit m{\"o}glich.
        Zur Beschlussfassung {\"u}ber eine {\"A}nderung der Satzung muss die vorgeschlagene
        Neufassung der Einladung im Wortlaut beif{\"u}gt werden.
-    \item Antr{\"a}ge zur Tagesordnung
-      \item schriftliche Antr{\"a}ge eines Zehntels der Mitglieder werden in die Tagesordnung
-               aufgenommen, sofern dies unter Einhaltung der Ladefrist m{\"o}glich ist;
-      \item ohne R\"ucksicht auf die Ladefrist wird die 
-       Auf Verlangen des Vorstandes, auf Antrag eine Zehntels der Mitglieder  oder eines Drittels
-       der erschienenen Mitglieder wird die Tagesordnung erg{\"a}nzt um Gegenst\"ande, {\"u}ber die kein Beschluss gefasst werden
-       soll oder die lediglich die Einberufung einer ausserordentlichen Mitgliederversammlung
-       oder die Versammlungsleitung betreffen.
+    \item 
+       Gegenst{\"a}nde sind in die Tagesordnung aufzunehmen, soweit dies unter Einhaltung der
+       Ladefrist m{\"o}glich ist,
+      \items{
+        \item auf Antrag eines Vorstandsmitglieds oder eines Rechnungspr{\"u}fers,
+        \item auf Antrag eines Zehntels der Mitglieder,
+        \item auf Antrag eines Drittels der erschienenen Mitglieder der Mitgliederversammlung.
+       }
    \item
-       Die Mitgliederversammlung ist {\"o}ffentlich und wird vom Vorsitzenden des Vereins
-       geleitet, sofern die Mitgliederversammlung nichts anderes beschliesst.
-       Der Versammlungsleiter bestimmt im Einvernehmen mit der Mitgliederversammlung ein
-       anwesendes Mitglied zum Schriftf{\"u}hrer.
+       Die Mitgliederversammlung ist {\"o}ffentlich. Der Vorstand bestimmt zu Beginn der Mitglieder\-ver\-sammlung
+       im Einvernehmen mit der Mitgliederversammlung einen Versammlungsleiter und einen Schriftf{\"u}hrer.
    \item 
-     Beschlussf{\"a}higkeit
-       items{
-         \item Jede ordnungsgem{\"a}ss einberufene Mitgliederversammlung ist ohne R{\"u}cksicht auf
+         Jede ordnungsgem{\"a}ss einberufene Mitgliederversammlung ist ohne R{\"u}cksicht auf
          die Anzahl der erschienenen Mitglieder beschlussf{\"a}hig.
-         \item Davon abweichend erfordern Beschl{\"u}sse {\"u}ber Satzungs{\"a}nderungen oder
+         Davon abweichend erfordern Beschl{\"u}sse {\"u}ber Satzungs\-{\"a}nderungen oder
          die Aufl{\"o}sung des Vereins die
          Anwesendheit der H{\"a}lfte aller Mitglieder. Liegt insoweit Beschlussunf{\"a}higkeit
          vor, kann die Mitgliederversammlung die Einberufung eine ausserordentlichen
          Mitgliederversammlung beschliessen, die ohne R{\"u}cksicht auf die Zahl der Erschienenen zum
          Beschluss {\"u}ber die neue Satzung berechtigt ist.
-       }
    \item
      Die Mitgliederversammlung beschlie{\ss}t
      \items{
@@ -225,27 +237,6 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
                 2/3 der anwesenden Mitglieder;
        \item in allen anderen F{\"a}llen mit einfacher Mehrheit.
      }
-   \item Den Vorsitz in der Mitgliederversammlung f{\"u}hrt der Vereinsvorsitzende, in
-       dessen Verhinderung sein Stellvertreter. Wenn auch dieser verhindert ist,
-       w{\"a}hlt die Mitgliederversammlung aus ihrer Mitte einen Versammlungsleiter.
-       Als Schriftf{\"u}hrer fungiert das zum Schriftf{\"u}hrer gew{\"a}hlte Vorstandsmitglied,
-       bei dessen Verhinderung bestimmt der Versammlungsleiter ein anwesendes
-       Vereinmitglied als Schriftf{\"u}hrer.
-   \item Die Wahlen und die Beschlussfassungen in der Mitgliederversammlung
-       erfolgen in der Regel mit einfacher Mehrheit der abgegebenen g{\"u}ltigen
-       Stimmen. Die Entlastung des Vorstandes bedarf jedoch einer qualifizierten
-       Mehrheit von zwei Dritteln der abgegebenen g{\"u}ltigen Stimmen. Ebenso
-       bed{\"u}rfen Beschl{\"u}sse {\"u}ber den Ausschluss von Mitgliedern sowie
-       Beschl{\"u}sse, mit denen die Satzung des Vereins ge{\"a}ndert werden soll, einer
-       qualifizierten Mehrheit.
-   \item Die Abstimmungsart bestimmt in der Regel der Versammlungsleiter. Eine
-       schriftliche Abstimmung muss erfolgen, wenn ein Drittel der erschienenen
-       Mitglieder dies beantragt.
-   \item Im Rahmen der ordentlichen Mitgliederversammlung erfolgt der Bericht des
-        Kassenwartes sowie der Kassenpr{\"u}fer sowie die Entlastung des Vorstandes.
-   \item Zwei Rechnungspr{\"u}fer werden von der Mitgliederversammlung auf die Dauer
-        von einem Jahr gew{\"a}hlt. Wiederwahl ist m{\"o}glich. Die Rechnungspr{\"u}fer
-        d{\"u}rfen nicht dem Vorstand angeh{\"o}ren.
    \item Die gefassten Beschl{\"u}sse werden schriftlich niedergelegt und vom
         Versammlungsleiter und vom Schriftf{\"u}hrer unterzeichnet. Das Protokoll hat
         Ort und Zeit der Versammlung sowie die Abstimmungsergebnisse zu
@@ -253,25 +244,13 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
 }
 
 
-\paragraf8{Vereinsmittel}
 
-\items{
-   \item F{\"u}r die Erf{\"u}llung der satzungsm{\"a}{\ss}igen Zwecke notwendige materielle Mittel
-        k{\"o}nnen aus Beitr{\"a}gen/Umlagen, Spenden, Zusch{\"u}sse und sonstigen
-        Zuwendungen erlangt werden. Die Mitgliederversammlung kann eine
-        Beitragsordnung erlassen, die H{\"o}he und Turnus von Mitgliedsbeitr{\"a}gen
-        regelt.
-   \item Der Betrag, {\"u}ber den der Vorstand ohne Beschluss der
-        Mitgliederversammlung verf{\"u}gen kann, wird durch die Mitgliederversammlung
-        festgelegt.
-}
-
-\paragraf{10}{Hochschulgruppe}
+\paragraf{Hochschulgruppe}
 
 \items{
   \item
     Mitglieder des Vereins, die Mitglieder Brandenburger Hochschulen oder
-    Fachhochschulen sind, bilden die \glqq upLUG Hochschulgruppe\grqq (HG).
+    Fachhochschulen sind, bilden die \glqq upLUG Hochschulgruppe\grqq{} (HG).
   \item
     Mitgliederversammlungen des Vereins sind zugleich Mitgliederversammlungen der HG.
     {\"U}ber Angelegenheiten, die nur die HG betreffen, sind nur die Mitglieder der HG
@@ -281,7 +260,7 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
     Mitglieder der HG sind, bilden den Vorstand der HG, sofern die HG nichts anderes beschliesst.
 }
 
-\paragraf{11}{Aufl{\"o}sung des Vereins}
+\paragraf{Aufl{\"o}sung des Vereins}
 
 \items{
    \item
