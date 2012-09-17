@@ -1,5 +1,6 @@
-\documentclass[11pt]{article}
+%\documentclass[11pt]{article}
 
+\input{jupp}
 \usepackage{german}
 \usepackage{times}
 
@@ -12,7 +13,6 @@
 \oddsidemargin-10mm
 \leftskip0pt
 \textwidth180mm
-\textheight260mm
 
 \rightskip0pt plus1ex minus1em
 \hyphenpenalty6000
@@ -39,6 +39,23 @@
   {\large\bfseries \S\,\the\itcounter\quad#1}
   \par\smallskip
 }
+
+\catcode`\@11\relax%
+  \def\ps@uplug{%
+    \let\@mkboth\@gobbletwo%
+    \def\@oddhead{}%
+    \def\@evenhead{}%
+    \def\@oddfoot{\par\bigskip\bigskip\par\hfill\normalfont\thepage\hfill}%
+    %\def\@evenfoot{\par\bigskip\bigskip\par\hfill\normalfont\thepage\fhill}%
+  }%
+ \pagestyle{uplug}%
+
+\catcode`\@12%
+ 
+\papersize A4
+\pagelayout
+\footskip10mm
+\textheight255mm
 
 \begin{document}
 \normalfont
@@ -75,7 +92,7 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
      Der Satzungszweck wird insbesondere verwirklicht durch
       \items{
         \item
-          {\"o}ffentliche und eintrittsfreie
+          {\"o}ffentliche und in der Regel eintrittsfreie
           Vortr{\"a}ge, Workshops und andere Veranstaltungen zu Linux und anderer
           freier Software;
         \item
@@ -106,16 +123,11 @@ Eintragung beim Amtsgericht Potsdam wird angestrebt.
 \items{
    \item Der Verein hat Mitglieder und F{\"o}rdermitglieder. Mitglied oder
    F{\"o}rdermitglied kann jede nat\"urliche oder juristische Person werden.
-   \item {\"U}ber die Aufnahme entscheidet nach schriftlichem Antrag der Vorstand.
+   \item {\"U}ber die Aufnahme entscheidet nach Antrag der Vorstand.
        {\"U}ber die Entscheidung wird der Antragsteller schriftlich an die dem Verein bekannte Adresse informiert.
        Im Falle der Ablehnung kann Berufung zur n{\"a}chsten
        ordentlichen Mitgliederversammlung eingelegt werden.
-   \item Die Mitgliedschaft endet durch Austritt, Ausschluss oder Tod des Mitglieds.
-%
-%  der Satz ^ ist eigentlich redundant, denn Ausschluss regeln wir unten bereits explizit,
-%  ebenso den Austritt (und eine Austrittsmoeglichkeit ist nach BGB verpflichtend vorgeschrieben,
-%  das muessen wir auch nicht nochmal sagen, ebenso Tod, das steht auch im BGB).
-%
+   \item Die Mitgliedschaft endet durch Austritt, Ausschluss oder Tod des Mitgliedes.
    \item Der Austritt eines Mitgliedes erfolgt durch schriftliche Erkl{\"a}rung gegen{\"u}ber
        dem Vorstand. Er wird mit Ablauf des Folgemonats wirksam.
    \item Ein Mitglied kann aus wichtigem Grund ausgeschlossen werden. Ein
@@ -265,18 +277,18 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
   \item
     Diejenigen Mitglieder des Vereins, die zugleich Mitglieder Brandenburger Hochschulen oder
     Fachhochschulen sind, bilden die \glqq upLUG Hochschulgruppe\grqq{} (HG).
+%  \item
+%    Die Mitgliederanzahl der HG muss mindestens sieben (7) betragen, anderfalls erstattet der Vorstand der HG dem Rektor der Universit{\"a}t Potsdam bzw. dessen Vertreter Bericht.
   \item
-    Mitgliederversammlungen des Vereins sind zugleich Mitgliederversammlungen der HG.
+    Mitgliederversammlungen des Vereins sind zugleich Mitgliederversammlungen der HG (sinngem{\"a}{\ss} nach \S\,7).
     {\"U}ber Angelegenheiten, die nur die HG betreffen, sind nur die Mitglieder der HG
-    stimmberechtigt.
+    stimmberechtigt. %Die Mittel der HG werden separat durch den Vorstand der HG verwaltet.
+% {\"A}nderungen die "\S\,8 Hochschulgruppe" betreffen, sind nur durch die Mitgliedervollversammlung der HG zu {\"a}dern.
+  \item
+    Die HG ist berechtigt einen eigenen Vorstand zu w{\"a}hlen.
   \item
     Diejenigen Mitglieder des Vereinsvorstandes, die zugleich
-    Mitglieder der HG sind, bilden den Vorstand der HG, sofern die HG nichts anderes beschlie{\ss}t.
-  \item
-    Die HG soll als \glqq eingetragene Vereinigung der Universit\"at Potsdam\grqq{} registriert werden,
-    solange die Voraussetzungen der Registrierordnung in der jeweils geltenden Fassung erf\"ullt sind.
-    F\"ur die Erf\"ullung von Berichts- und Auskunftspflichten, die sich aus der Registrierordnung ergeben,
-    ist der Vorstand der HG zust\"andig.
+    Mitglieder der HG sind, bilden den Vorstand der HG, sofern dies von der HG nichts anderes beschlie\ss{}t.
 }
 
 \paragraf{Aufl{\"o}sung des Vereins}
@@ -296,7 +308,7 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
 }
 
 \par\bigskip
-Potsdam, den 29.\,07.\,2012
+Potsdam, den \ldots\ldots\ldots\ldots 
 
 \end{document}
 
