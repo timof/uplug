@@ -1,10 +1,8 @@
-%\documentclass[11pt]{article}
+\documentclass[11pt]{article}
 
-\input{jupp}
 \usepackage{german}
 \usepackage{times}
 
-% \fontsize{11pt}{8pt}\selectfont
 \def\normalfont{\sffamily}
 
 \parindent0pt
@@ -12,7 +10,7 @@
 \headsep0pt
 \oddsidemargin-10mm
 \leftskip0pt
-\textwidth180mm
+\textwidth181mm
 
 \rightskip0pt plus1ex minus1em
 \hyphenpenalty6000
@@ -40,22 +38,22 @@
   \par\smallskip
 }
 
+\newcount\totalpages
 \catcode`\@11\relax%
   \def\ps@uplug{%
     \let\@mkboth\@gobbletwo%
     \def\@oddhead{}%
     \def\@evenhead{}%
-    \def\@oddfoot{\par\bigskip\bigskip\par\hfill\normalfont\thepage\hfill}%
-    %\def\@evenfoot{\par\bigskip\bigskip\par\hfill\normalfont\thepage\fhill}%
+    \def\@oddfoot{\hfill\normalfont\thepage{}\, / \the\totalpages\hfill%
+      \protected@write\@auxout{}{\string\global\string\totalpages=\thepage\string\relax}%
+    }%
   }%
- \pagestyle{uplug}%
-
 \catcode`\@12%
- 
-\papersize A4
-\pagelayout
-\footskip10mm
-\textheight255mm
+
+\pagestyle{uplug}%
+
+\footskip14mm
+\textheight260mm
 
 \begin{document}
 \normalfont
@@ -307,7 +305,7 @@ Organe des Vereins sind die Mitgliederversammlung und der Vorstand.
      gemeinn{\"u}tzige oder mildt{\"a}tige Zwecke zu verwenden.
 }
 
-\par\bigskip
+\par\vskip12mm
 Potsdam, den\qquad \ldots\ldots\ldots\ldots\ldots 
 
 \end{document}
